@@ -7,6 +7,10 @@ def translate(word:str):
     w = word.lower()
     if w in data:
         return data[w]
+    elif w.title() in data:
+        return data[w.title()]
+    elif w.upper() in data: #in case user enters words like USA or NATO
+        return data[w.upper()]
     else:
         return None 
     # we can ommit the else statement because None is the default value returned 
